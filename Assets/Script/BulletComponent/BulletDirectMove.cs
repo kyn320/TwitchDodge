@@ -4,15 +4,6 @@ using UnityEngine;
 
 public class BulletDirectMove : BulletMove
 {
-    public float moveSpeed = 3f;
-
-    public override void SetDir(Transform _target = null)
-    {
-        if (_target != null)
-            bulletDir.SetDir(_target);
-        else
-            bulletDir.SetRandomDir();
-    }
 
     void FixedUpdate()
     {

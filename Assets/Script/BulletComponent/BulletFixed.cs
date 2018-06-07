@@ -2,13 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BulletFixed : MonoBehaviour
+public class BulletFixed : BulletMove
 {
-    Transform tr;
-
     void Awake()
     {
         tr = GetComponent<Transform>();
+        SetPosition();
     }
 
     void OnEnable()
@@ -16,12 +15,20 @@ public class BulletFixed : MonoBehaviour
         SetPosition();
     }
 
+    public override void SetTarget(Transform _target = null)
+    {
+        SetPosition();
+    }
+
     void SetPosition()
     {
+        print("set position");
+
         if (!GameManager.Instance.isPlay)
             return;
 
-        tr.position = ObjectGenerator.Instance.GetRandomPosition(tr.localScale * 2);
+        print("set position is work");
+        tr.localPosition = ObjectGenerator.Instance.GetRandomPosition(tr.localScale * 2);
     }
 
 }

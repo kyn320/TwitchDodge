@@ -53,28 +53,29 @@ public class TwitchChat : MonoBehaviour
         {
             TwitchIRC.Instance.SendChat("영남군(dudskazns)");
         }
-        else {
+        else
+        {
             Vector2 pos = ObjectGenerator.Instance.GetRandomEdgePosition();
 
             ChatCommand chatCommand = FindChatCommand(_message);
 
             int randMove = Random.Range(0, 3);
             int randDir = Random.Range(0, 2);
+            float randSpeed = Random.Range(1f, 10f);
 
             if (chatCommand != null)
             {
                 for (int i = 0; i < chatCommand.source.Length; ++i)
                 {
                     go = ObjectPoolManager.Instance.Get(chatCommand.source[i].name);
+                    b = go.GetComponent<TextBullet>();
 
                     if (chatCommand.isText)
                     {
-                        b = go.GetComponent<TextBullet>();
-
                         if (i != 0)
-                            b.SetText(chatCommand.command[i], prevTarget, randDir, randMove);
+                            b.SetText(chatCommand.command[i], prevTarget, 0);
                         else
-                            b.SetText(chatCommand.command[i], randDir, randMove);
+                            b.SetText(chatCommand.command[i], 0);
                     }
 
                     go.transform.position = pos;
@@ -82,8 +83,36 @@ public class TwitchChat : MonoBehaviour
                     prevTarget = go.transform;
                 }
             }
-            else {
+            else
+            {
                 int bulletCount = 0;
+                string bulletCategory = "";
+                switch (randDir)
+                {
+                    case 0:
+                        // direct
+                        bulletCategory = "Head_Direct";
+                        break;
+                    case 1:
+                        //follow
+                        bulletCategory = "Head_Target";
+                        break;
+                }
+
+                switch (randMove)
+                {
+                    case 0:
+                        //direct
+                        break;
+                    case 1:
+                        //follow
+                        break;
+                    case 2:
+                        //curve
+                        bulletCategory += "_Curve";
+                        break;
+                }
+
                 for (int i = 0; i < _message.Length; ++i)
                 {
                     if (bulletCount > 7)
@@ -92,14 +121,18 @@ public class TwitchChat : MonoBehaviour
                     if (_message[i] == ' ')
                         continue;
 
-                    go = ObjectPoolManager.Instance.Get("Normal");
-
-                    b = go.GetComponent<TextBullet>();
-
                     if (i != 0)
-                        b.SetText(_message[i], prevTarget, randDir, randMove);
+                    {
+                        go = ObjectPoolManager.Instance.Get("Body");
+                        b = go.GetComponent<TextBullet>();
+                        b.SetText(_message[i], prevTarget, randSpeed);
+                    }
                     else
-                        b.SetText(_message[i], randDir, randMove);
+                    {
+                        go = ObjectPoolManager.Instance.Get(bulletCategory);
+                        b = go.GetComponent<TextBullet>();
+                        b.SetText(_message[i], randSpeed);
+                    }
 
                     go.transform.position = pos;
 

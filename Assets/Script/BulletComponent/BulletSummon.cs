@@ -22,18 +22,22 @@ public class BulletSummon : MonoBehaviour
     
     void OnEnable()
     {
+        count = 0;
         StartCoroutine(Summon());
     }
 
     IEnumerator Summon()
     {
         GameObject g = null;
-        while (summonCount == 0 || count < summonCount)
+        while (true)
         {
             yield return new WaitForSeconds(summonWaitInterval);
             g = ObjectPoolManager.Instance.Get(summonObject.name);
             g.transform.position = tr.position;
             ++count;
+
+            if (summonCount > 0 && summonCount <= count)
+                break;
             yield return new WaitForSeconds(summonInterval);
         }
     }

@@ -4,15 +4,19 @@ using UnityEngine;
 
 public class BulletFollowDirection : BulletDirection
 {
+    public Transform targetRoot;
 
-    void Start() {
+    void Start()
+    {
         SetTarget(target);
     }
 
     public override void SetTarget(Transform _target)
     {
+        targetRoot = GameManager.Instance.player.transform;
+
         if (_target == null)
-            _target = GameManager.Instance.player.transform;
+            _target = targetRoot;
 
         target = _target;
         SetDir(target);
@@ -29,6 +33,9 @@ public class BulletFollowDirection : BulletDirection
     {
         while (target != null)
         {
+            if (!target.gameObject.activeSelf)
+                target = targetRoot;
+
             distance = (target.position - tr.position).sqrMagnitude;
             dir = (target.position - tr.position).normalized;
             yield return null;

@@ -12,6 +12,10 @@ public class ObjectGenerator : Singleton<ObjectGenerator>
         float x = Random.Range((center.x - size.x * 0.5f) + _size.x, (center.x + size.x * 0.5f) - _size.x);
         float y = Random.Range((center.y - size.y * 0.5f) + _size.y, (center.y + size.y * 0.5f) - _size.y);
 
+        print("max " + ((center.x - size.x * 0.5f) + _size.x) + " / " + ((center.x + size.x * 0.5f) - _size.x));
+        print("max " + ((center.y - size.y * 0.5f) + _size.y) + " / " + ((center.y + size.y * 0.5f) - _size.y));
+
+        print(x + " / " + y);
         return new Vector2(x, y);
     }
 

@@ -149,10 +149,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9df7e5b1c9485204a9b588ed373bfdf5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 2
-  stopDistance: 1
-  target: {fileID: 0}
-  targetRoot: {fileID: 0}
+  moveSpeed: 3
+  stopDistance: 0.1
 --- !u!114 &114530833344767644
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -164,7 +162,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c5ada3bcf0ca3a4faf2994e7a0c2a66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveDir: {x: 0, y: 0, z: 0}
 --- !u!114 &114751220690562908
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -179,3 +176,4 @@ MonoBehaviour:
   dir: {x: 0, y: 0, z: 0}
   distance: 0
   target: {fileID: 0}
+  targetRoot: {fileID: 0}

@@ -11,8 +11,8 @@ public class BulletDirection : MonoBehaviour
     protected float distance;
 
     protected Transform tr;
-    [SerializeField]
-    protected Transform target;
+
+    public Transform target;
 
     void Awake()
     {
@@ -30,11 +30,6 @@ public class BulletDirection : MonoBehaviour
             _target = GameManager.Instance.player.transform;
 
         dir = (_target.position - tr.position).normalized;
-    }
-
-    public void SetRandomDir()
-    {
-
     }
 
     public virtual void SetTarget(Transform _target)

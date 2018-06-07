@@ -7,8 +7,6 @@ public class BulletCurveMove : BulletMove
     public float lenght = 1f;
     public float height = 1f;
 
-    public float moveSpeed = 3f;
-
     void Update()
     {
         tr.position += height
