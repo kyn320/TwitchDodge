@@ -411,10 +411,25 @@ MonoBehaviour:
     source:
     - {fileID: 1731972191556696, guid: 9235b6cf981f0aa4887567c02785218f, type: 2}
     isText: 0
+    isFixed: 1
   - command: "\uD568\uC815"
     source:
     - {fileID: 1158498505349500, guid: e2b797fd1b54d134db5b7e9457201662, type: 2}
     isText: 0
+    isFixed: 1
+  - command: "\uC640\uBCA0\uC2A4"
+    source:
+    - {fileID: 1969752224580382, guid: 7dc89266d69e5d348bf05c941af778f3, type: 2}
+    - {fileID: 1491551290056388, guid: 5cf3245e01cebeb488016a0b15de9d81, type: 2}
+    - {fileID: 1308198998574930, guid: 01f82dbb094588d449241b57d0c2c7dd, type: 2}
+    isText: 1
+    isFixed: 0
+  - command: "\uAC04\uC2E0"
+    source:
+    - {fileID: 1165295226497156, guid: 437eaad483d20cd46a6bd068ee4b96ba, type: 2}
+    - {fileID: 1754858429586132, guid: dd1a1e3fb9090d9419089c0f4134adaa, type: 2}
+    isText: 1
+    isFixed: 0
 --- !u!114 &114775301111309900
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -456,4 +471,16 @@ MonoBehaviour:
   - {fileID: 1400520476253972, guid: 0e59980213ea922499c8db861495479e, type: 2}
   - {fileID: 1198786181191524, guid: 383b7d2a6c86d914596f5cb51653c2df, type: 2}
   - {fileID: 1220278001380200, guid: 62c9f56d56404534cabae637bcc12efa, type: 2}
-  poolAmount: 500000000500000005000000140000000500000005000000
+  - {fileID: 1969752224580382, guid: 7dc89266d69e5d348bf05c941af778f3, type: 2}
+  - {fileID: 1491551290056388, guid: 5cf3245e01cebeb488016a0b15de9d81, type: 2}
+  - {fileID: 1308198998574930, guid: 01f82dbb094588d449241b57d0c2c7dd, type: 2}
+  - {fileID: 1890265479965108, guid: f55c802ddbface546847cf944b6261f4, type: 2}
+  - {fileID: 1862619318801730, guid: b3ca479fa586df24d861eb3ad79de10d, type: 2}
+  - {fileID: 1479879404164406, guid: f06fbed168137564b88d75118355a159, type: 2}
+  - {fileID: 1422228108944798, guid: 241d22e4289dabd48a18d31351a660ac, type: 2}
+  - {fileID: 1479879404164406, guid: aea5154031f15104ba0c1167d55e8061, type: 2}
+  - {fileID: 1165295226497156, guid: 437eaad483d20cd46a6bd068ee4b96ba, type: 2}
+  - {fileID: 1754858429586132, guid: dd1a1e3fb9090d9419089c0f4134adaa, type: 2}
+  - {fileID: 1731972191556696, guid: fa09ce8242f3ad744854789e3697ef6d, type: 2}
+  - {fileID: 1158498505349500, guid: b0fdf4ffa6246804d93e4d4229f36dca, type: 2}
+  poolAmount: 500000000500000005000000140000000500000005000000050000000500000005000000140000001400000014000000140000001400000003000000030000000a0000000a000000

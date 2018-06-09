@@ -70,6 +70,9 @@ public class TwitchChat : MonoBehaviour
                     go = ObjectPoolManager.Instance.Get(chatCommand.source[i].name);
                     b = go.GetComponent<TextBullet>();
 
+                    if (!chatCommand.isFixed)
+                        go.transform.position = pos;
+
                     if (chatCommand.isText)
                     {
                         if (i != 0)
@@ -78,7 +81,6 @@ public class TwitchChat : MonoBehaviour
                             b.SetText(chatCommand.command[i], 0);
                     }
 
-                    go.transform.position = pos;
 
                     prevTarget = go.transform;
                 }
@@ -121,20 +123,22 @@ public class TwitchChat : MonoBehaviour
                     if (_message[i] == ' ')
                         continue;
 
+
                     if (i != 0)
                     {
                         go = ObjectPoolManager.Instance.Get("Body");
+                        go.transform.position = pos;
                         b = go.GetComponent<TextBullet>();
                         b.SetText(_message[i], prevTarget, randSpeed);
                     }
                     else
                     {
                         go = ObjectPoolManager.Instance.Get(bulletCategory);
+                        go.transform.position = pos;
                         b = go.GetComponent<TextBullet>();
                         b.SetText(_message[i], randSpeed);
                     }
 
-                    go.transform.position = pos;
 
                     prevTarget = go.transform;
                     ++bulletCount;

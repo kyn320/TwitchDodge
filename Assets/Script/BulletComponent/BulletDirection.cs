@@ -19,16 +19,11 @@ public class BulletDirection : MonoBehaviour
         tr = GetComponent<Transform>();
     }
 
-    public void SetDir(Vector3 _dir)
-    {
-        dir = _dir;
-    }
-
     public void SetDir(Transform _target)
     {
         if (_target == null)
             _target = GameManager.Instance.player.transform;
-
+        
         dir = (_target.position - tr.position).normalized;
     }
 
@@ -84,5 +79,5 @@ public class BulletDirection : MonoBehaviour
     {
         return distance;
     }
-    
+
 }

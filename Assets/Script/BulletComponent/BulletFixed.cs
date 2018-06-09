@@ -22,12 +22,9 @@ public class BulletFixed : BulletMove
 
     void SetPosition()
     {
-        print("set position");
-
         if (!GameManager.Instance.isPlay)
             return;
-
-        print("set position is work");
+        
         tr.localPosition = ObjectGenerator.Instance.GetRandomPosition(tr.localScale * 2);
     }
 

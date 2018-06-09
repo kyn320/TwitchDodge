@@ -8,5 +8,5 @@ public class ChatCommand {
     public string command;
     public GameObject[] source;
     public bool isText = true;
-    
+    public bool isFixed = false;
 }
